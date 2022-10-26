@@ -50,12 +50,15 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
 import { WorkSessionsComponent } from './work-sessions/work-sessions.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ViewWorkSessionComponent } from './work-sessions/view-work-session/view-work-session.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TopNavComponent,
-    WorkSessionsComponent
+    WorkSessionsComponent,
+    ViewWorkSessionComponent
   ],
   imports: [
     BrowserModule,
