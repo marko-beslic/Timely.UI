@@ -51,6 +51,7 @@ import { WorkSessionsComponent } from './work-sessions/work-sessions.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ViewWorkSessionComponent } from './work-sessions/view-work-session/view-work-session.component';
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -100,7 +101,8 @@ import { ViewWorkSessionComponent } from './work-sessions/view-work-session/view
     MatPaginatorModule,
     MatSortModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

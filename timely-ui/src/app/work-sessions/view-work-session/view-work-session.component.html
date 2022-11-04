@@ -1,1 +1,50 @@
-<p>view-work-session works!</p>
+<div class="page-header">
+  <div class="container">
+      <h1>New Session</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row top-row">
+    <div class="col-xs-12">
+      <a routerLink="" color="primary" mat-raised-button >
+        <mat-icon>cancel</mat-icon> Cancel
+      </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <form #workSessionDetails="ngForm">
+        <div class="row">
+          <mat-form-field appearance="outline">
+            <mat-label>Project name</mat-label>
+            <input type="text" required matInput [(ngModel)]="workSession.Name" name="name">
+          </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <mat-label>Start time</mat-label>
+          <input type="datetime-local" required matInput [(ngModel)]="workSession.CreatedDate" name="CreatedDate">
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+          <mat-label>End time</mat-label>
+          <input type="datetime-local" required matInput [(ngModel)]="workSession.EndDate" name="endDate">
+        </mat-form-field>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="row bottom-row">
+    <div class="col-xs-12">
+      <a color="primary" (click)="onAdd()" mat-raised-button >
+        <mat-icon>stop</mat-icon> End Session
+      </a>
+    </div>
+  </div>
+</div>
+

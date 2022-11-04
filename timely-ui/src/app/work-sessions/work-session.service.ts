@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { AddWorkSessionRequest } from '../models/api-models/add-student-request.model';
 import { workSession } from '../models/api-models/workSession.model';
 
 @Injectable({
@@ -12,7 +13,22 @@ export class WorkSessionService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getWorkSession(): Observable<workSession[]> {
-    return this.httpClient.get<workSession[]>(this.baseApiUrl + '/WorkSessions')
+  getWorkSessions(): Observable<workSession[]> {
+    return this.httpClient.get<workSession[]>(this.baseApiUrl + '/workSessions')
   }
+
+  getWorkSession(workSessionId: string): Observable<workSession> {
+    return this.httpClient.get<workSession>(this.baseApiUrl + '/workSessions/' + workSessionId)
+  }
+
+  addWorkSession(workSessionRequest: workSession): Observable<workSession> {
+    const addWorkSessionRequest: AddWorkSessionRequest = {
+      name: workSessionRequest.Name,
+      createdDate: workSessionRequest.CreatedDate,
+      endDate:workSessionRequest.EndDate
+    }
+
+    return this.httpClient.post<workSession>(this.baseApiUrl + '/workSessions/add', addWorkSessionRequest)
+  }
+
 }

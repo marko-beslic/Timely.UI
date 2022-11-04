@@ -19,7 +19,7 @@ export class WorkSessionsComponent implements OnInit {
 
   ngOnInit(): void {
     // Fetch Work Sessions
-    this.workSessionService.getWorkSession()
+    this.workSessionService.getWorkSessions()
     .subscribe(
       (successResponse) => {
         this.workSessions = successResponse;
